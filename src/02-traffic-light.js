@@ -22,5 +22,43 @@
  * @returns {string} The driving action to take
  */
 export function getTrafficAction(color) {
-  // Your code here
+	if (typeof color !== 'string') {
+		return 'INVALID SIGNAL'
+	}
+
+	// Best Practice
+	switch (color.toLowerCase()) {
+		case 'green':
+			return 'GO'
+		case 'yellow':
+			return 'SLOW DOWN'
+		case 'red':
+			return 'STOP'
+		case 'flashing red':
+			return 'STOP AND PROCEED WITH CAUTION'
+		default:
+			return 'INVALID SIGNAL'
+	}
+
+	// According the insruction
+	// switch (color) {
+	// 	case 'GREEN':
+	// 	case 'Green':
+	// 	case 'green':
+	// 		return 'GO'
+	// 	case 'YELLOW':
+	// 	case 'Yellow':
+	// 	case 'yellow':
+	// 		return 'SLOW DOWN'
+	// 	case 'RED':
+	// 	case 'Red':
+	// 	case 'red':
+	// 		return 'STOP'
+	// 	case 'FLASHING RED':
+	// 	case 'Flashing Red':
+	// 	case 'flashing red':
+	// 		return 'STOP AND PROCEED WITH CAUTION'
+	//  default:
+	//   return "INVALID SIGNAL";
+	// }
 }
